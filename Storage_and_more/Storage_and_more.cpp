@@ -5,6 +5,7 @@ void funct (void);      //declare function
 static int scount = 10; //test global static int
 int count = 10;         //test global int
 void funct2 (void);
+extern int write_extern();
 
 main () {
     while (scount--){
@@ -14,6 +15,11 @@ main () {
     while (count--){
         funct2();
     }
+    //had to use git bash terminal in windows to get this work.
+    //VS code had problems compiling more than two files and 
+    //I did not want to spend an hour figuring out how to make it work.
+    count = write_extern();
+    std::cout << "return count is " << count << std::endl;
 }
 
 void funct(void) {
