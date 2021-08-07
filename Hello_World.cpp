@@ -2,6 +2,8 @@
 
 using namespace std; //namespaces are new since C
 
+#define LENGTH 5;
+
 //Extern can be placed anywhere and works like function declarations
 extern int a, b; //variable declaration
 extern int c;
@@ -51,7 +53,9 @@ int main(){
     cout << b << endl; //printed as 139
     cout << c << endl;
 
+    const float whoa = 100.0;
     f = 100.0 / 3.0;
+    f = whoa / LENGTH;
     cout << f << endl;
     cout << "what\vare\vvertical\vtabs?"; //learned about escape characters
     return 0; //terminates main function
