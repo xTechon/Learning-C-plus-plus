@@ -53,7 +53,7 @@ int main(){
 
     f = 100.0 / 3.0;
     cout << f << endl;
-
+    cout << "what\vare\vvertical\vtabs?"; //learned about escape characters
     return 0; //terminates main function
 }
 
