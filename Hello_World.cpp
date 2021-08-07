@@ -42,9 +42,13 @@ int main(){
 
     //variable initalization
     a = 10;
-    b = 15;
-    c = b + a;
-
+    //b = 15;
+    //int literal octal
+    b = 0213; //139 decimal
+    c = b + a; //result? -> 0213 (139) + 10 = 149
+    //auto converts to decimal when summig
+    //either converts int from octal or decimal or both are same bit value when stored
+    cout << b << endl; //printed as 139
     cout << c << endl;
 
     f = 100.0 / 3.0;
@@ -72,4 +76,14 @@ int funct(){
  * double
  * void
  * wchar_t (wide character) like char but made up of multiple bytes, depends on compiler
+ */
+
+/**
+ * 85         // decimal
+ * 0213       // octal
+ * 0x4b       // hexadecimal
+ * 30         // int
+ * 30u        // unsigned int
+ * 30l        // long
+ * 30ul       // unsigned long
  */
