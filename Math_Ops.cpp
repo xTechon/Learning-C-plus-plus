@@ -7,11 +7,17 @@ using namespace std;
 
 void bubbleSort(int *bub, int size);
 void swap (int *arr, int i);
+void swapR (int& base, int& p1);
+int bubble [10]; //make it global for reference practice
+
+int& blowBub(int i){ //a function reference for bubble
+    return bubble[i];
+}
 
 main () {
     int i, j;
-    int bubble [10];
     double k;
+
     //set random seed
     srand ((unsigned) time(NULL));
 
@@ -19,7 +25,7 @@ main () {
     for (i = 0; i < 10; i++){ //test a for loop, works exactly the same as C
         //random number
         j = (rand() % 100) + 1; //want numbers 1-100
-        bubble[i] = j;
+        blowBub(i) = j; //refrence as function return practice
         cout << "Random Number: " << j << endl;
     }
 
@@ -29,7 +35,7 @@ main () {
     for (i = 0; i < 10; i++){ //display results
         cout << bubble[i] << endl;
     }
-    
+
     k = sqrt((double)j); //test a math op
     cout << "sqrt of " << j << " is " << k << endl;
 
@@ -46,7 +52,8 @@ void bubbleSort(int *bub, int size){
         swapped = false;
         for (int i = 0; i < (size-j); i++){
             if ((bub[i] > bub[i+1]) && (i != 9)) {
-                swap(bub,i);
+                //swap(bub,i);
+                swapR(bub[i], bub[i+1]);
                 swapped = true;
             }
         }
@@ -60,4 +67,11 @@ void swap (int *arr, int i){
     arr[i] = arr[i+1];
     arr[i+1] = temp;
     return;
+}
+
+//Version of swap using references as parameters instead
+void swapR (int& base, int& p1){
+    int temp = base;
+    base = p1;
+    p1 = temp;
 }
