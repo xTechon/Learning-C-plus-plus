@@ -39,7 +39,16 @@ main () {
     k = sqrt((double)j); //test a math op
     cout << "sqrt of " << j << " is " << k << endl;
 
-    
+    //display time in terminal
+    time_t now = time(0);
+    char* dt =ctime(&now);
+    tm *ltm = localtime(&now);
+
+    cout << "local time: " << dt << endl;
+
+    cout << "Time: " << ltm ->tm_hour << ":";
+    cout << ltm->tm_min << ":";
+    cout << ltm->tm_sec << endl;
 
     return 0;
 }
