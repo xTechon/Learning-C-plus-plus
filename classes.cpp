@@ -2,13 +2,19 @@
 
 class Box {
   // public variables can be accessed anywhere
-public:
-  double length;
-  double width;
-  double height;
-  // declare a new function
-  double getVolume(void);
-  Box(double l, double w, double h); // class constructor
+  public:
+    double length;
+    double width;
+    double height;
+    // declare a new function
+    double getVolume(void);
+    // declare and define a function within the class
+    void testMessage(){
+      std::cout << "this is a test" << std::endl;
+    }
+    Box(double l, double w, double h); // class constructor
+    ~Box(); //declare the class deconstructor
+    //class deconstructors cannot return values or take parameters
 };
 
 // define a function declared earlier
@@ -19,18 +25,22 @@ Box::Box(double l, double w, double h) : length(l), width(w), height(h) {
   std::cout << "a box has been created" << std::endl;
 }
 
+Box::~Box(){
+  std::cout << "a box has been deleted" << std::endl;
+}
+
 int main() {
   Box box1(3.0, 2.0, 5.0);
   Box box2(6.0, 3.0, 4.0);
   double volume = 0.0;
   /*
-  box1.height = 3.0;
-  box1.width = 2.0;
-  box1.length = 5.0;
+    box1.height = 3.0;
+    box1.width = 2.0;
+    box1.length = 5.0;
 
-  box2.height = 6.0;
-  box2.width = 3.0;
-  box2.length = 4.0;
+    box2.height = 6.0;
+    box2.width = 3.0;
+    box2.length = 4.0;
   */
   volume = box1.height * box1.width * box1.length;
   std::cout << "Volume of box1 is: " << volume << std::endl;
